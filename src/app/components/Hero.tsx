@@ -41,7 +41,7 @@ export function Hero() {
           </div>
           <div>
             <dt>Project</dt>
-            <dd>BCA Data Mining, minor project</dd>
+            <dd>Data Mining, minor project</dd>
           </div>
           <div>
             <dt>Code</dt>
