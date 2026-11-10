@@ -32,6 +32,23 @@ Motion (reveals, the chart draw-in, the masthead lines) is CSS and one
 IntersectionObserver hook in `src/app/hooks.ts`, and it all stops under
 `prefers-reduced-motion`.
 
+## Deploy to Vercel
+
+The site is a static Vite build, so Vercel needs nothing but `dist/client`.
+
+```sh
+bun run build:web        # static output only, in dist/client
+```
+
+Then import the repo at vercel.com → New Project. `vercel.json` sets the build
+command (`npm run build:web`), the output directory (`dist/client`), the SPA
+rewrite and long-lived caching for the hashed assets. There are no environment
+variables and no server functions.
+
+`bun.lock` is not committed, so Vercel installs with npm and resolves the
+`package.json` ranges. Commit the lockfile if you want builds pinned to the
+versions you ran locally.
+
 ## Deploy with Freebuff Sites
 
 `deploy.json` points at the build output. After `bun run build`, deploy with the

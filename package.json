@@ -2,10 +2,14 @@
   "name": "house-price-notes",
   "private": true,
   "version": "0.1.0",
+  "engines": {
+    "node": "22.x"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/postbuild.mjs",
+    "build:web": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
   },
