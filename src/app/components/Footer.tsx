@@ -14,9 +14,7 @@ export function Footer() {
           </span>
           <ArrowUpRight size={20} />
         </a>
-        <div className="foot__grid">
-          <p>Written by Tejveer. BCA Data Mining, minor project.</p>
-          <p>Set in Fraunces, Source Serif 4 and JetBrains Mono.</p>
+        <div className="foot__row">
           <a href="#top">Back to top ↑</a>
         </div>
       </div>
