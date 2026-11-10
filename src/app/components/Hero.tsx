@@ -6,11 +6,11 @@ export function Hero() {
     <section className="hero" id="top">
       <p className="hero__kicker mono">
         <span className="sq" aria-hidden="true" />
-        {post.kicker}
+        <span>{post.kicker}</span>
         <span className="sep" aria-hidden="true">
           /
         </span>
-        {post.kickerNote}
+        <span>{post.kickerNote}</span>
       </p>
 
       <h1 className="hero__title">
