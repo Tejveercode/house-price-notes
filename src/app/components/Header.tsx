@@ -17,7 +17,6 @@ export function Header() {
             Repository
             <ArrowUpRight />
           </a>
-          <a href="#sources">Sources</a>
         </nav>
       </div>
       <div className="progress" aria-hidden="true">
