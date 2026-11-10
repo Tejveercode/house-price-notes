@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { commands, menu, metrics, priceStats, sources } from '../content'
+import { commands, menu, metrics, priceStats } from '../content'
 import { RepoLink } from './Hero'
 import { CorrelationChart } from './CorrelationChart'
 import { Reveal } from './Reveal'
@@ -255,25 +255,6 @@ export function Post() {
               </p>
             </div>
           </div>
-        </section>
-
-        <section id="sources" className="sources" aria-labelledby="sources-title">
-          <h2 className="sources__title" id="sources-title">
-            Sources
-          </h2>
-          <ol>
-            {sources.map((source, index) => (
-              <li key={source.href}>
-                <a href={source.href} target="_blank" rel="noreferrer">
-                  <span className="n">{String(index + 1).padStart(2, '0')}</span>
-                  <span>
-                    <span className="t">{source.title}</span>
-                    <span className="u">{source.href.replace(/^https?:\/\//, '')}</span>
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ol>
         </section>
       </div>
     </article>
