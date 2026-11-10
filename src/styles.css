@@ -977,7 +977,7 @@ button {
   color: var(--ink);
 }
 
-/* closing + sources */
+/* closing */
 .closing {
   padding-top: 2px;
 }
@@ -1005,60 +1005,6 @@ button {
 }
 .repo-link:hover {
   color: var(--ink);
-}
-
-.sources {
-  margin-top: clamp(46px, 6vw, 72px);
-  padding-top: 18px;
-  border-top: 1px solid var(--rule-2);
-  scroll-margin-top: 84px;
-}
-.sources__title {
-  margin: 0 0 10px;
-  font-family: var(--font-mono);
-  font-size: 0.625rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-4);
-}
-.sources ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.sources li + li {
-  border-top: 1px solid var(--rule);
-}
-.sources a {
-  display: grid;
-  grid-template-columns: 1.75rem minmax(0, 1fr);
-  gap: 8px;
-  padding: 12px 0;
-  text-decoration: none;
-}
-.sources .n {
-  font-family: var(--font-mono);
-  font-size: 0.625rem;
-  color: var(--ink-4);
-  padding-top: 3px;
-}
-.sources .t {
-  display: block;
-  font-size: 1rem;
-  line-height: 1.4;
-  color: var(--ink-body);
-  transition: color 0.2s;
-}
-.sources .u {
-  display: block;
-  margin-top: 4px;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  color: var(--ink-4);
-  word-break: break-word;
-}
-.sources a:hover .t {
-  color: var(--oxide);
 }
 
 /* ---------------------------------------------------------------- footer */
@@ -1102,26 +1048,15 @@ button {
   margin-top: 0.35em;
   flex: none;
 }
-.foot__grid {
-  display: grid;
-  gap: 14px;
+.foot__row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   margin-top: clamp(34px, 5vw, 54px);
   padding-top: 20px;
   border-top: 1px solid rgba(233, 230, 223, 0.15);
-  font-size: 0.875rem;
-  color: rgba(233, 230, 223, 0.7);
 }
-@media (min-width: 780px) {
-  .foot__grid {
-    grid-template-columns: 1fr 1fr auto;
-    align-items: center;
-  }
-}
-.foot__grid p {
-  margin: 0;
-  line-height: 1.5;
-}
-.foot__grid a {
+.foot__row a {
   font-family: var(--font-mono);
   font-size: 0.625rem;
   letter-spacing: 0.1em;
@@ -1129,7 +1064,7 @@ button {
   color: rgba(233, 230, 223, 0.7);
   text-decoration: none;
 }
-.foot__grid a:hover {
+.foot__row a:hover {
   color: #e9a68f;
 }
 
@@ -1167,5 +1102,67 @@ button {
   .chart__bar {
     transition: none;
     transform: none;
+  }
+}
+
+/* --------------------------------------------------- very small screens */
+
+/* Under 430px the correlation track has too little room beside a label and a
+   three-decimal value, so each row becomes two lines and the bar gets the full
+   width. */
+@media (max-width: 430px) {
+  .chart__row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'label value'
+      'track track';
+    row-gap: 7px;
+    column-gap: 10px;
+    padding: 10px 0;
+  }
+  .chart__label {
+    grid-area: label;
+  }
+  .chart__value {
+    grid-area: value;
+  }
+  .chart__track {
+    grid-area: track;
+    height: 10px;
+  }
+  .chart__axis {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .chart__axis > div {
+    grid-column: 1;
+  }
+  .stats > div {
+    padding: 12px 10px;
+  }
+  .stats > div:first-child {
+    padding-left: 0;
+  }
+  .stats dd {
+    font-size: 1.2rem;
+  }
+}
+
+/* The 80/20 figure keeps its counts but becomes two stacked rows, because a
+   one-fifth column is barely 70px wide on a phone. */
+@media (max-width: 480px) {
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .split__part {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 0;
+    padding: 11px 13px;
+  }
+  .split__part span {
+    text-align: right;
   }
 }
