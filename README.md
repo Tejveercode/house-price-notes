@@ -4,6 +4,8 @@ A single long-form blog post about a BCA Data Mining minor project: a housing
 dataset from New Taipei City, the features that line up with price, and a
 Linear Regression model trained on it in Python.
 
+Live site: https://site-90073e834744408eb298cf2b27f48725.freebuff.page
+
 ## Run it
 
 ```sh
