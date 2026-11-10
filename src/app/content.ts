@@ -3,7 +3,7 @@ export const post = {
   kickerNote: 'minor project',
   title: 'What actually moves a house price?',
   standfirst: 'Notes from my Data Mining project',
-  deck: 'For my Data Mining minor project I wanted a question anyone could follow without a finance background: why does one house cost more than another? So I took a real housing dataset, cleaned it, and checked which features line up with price. Then I trained a Linear Regression model to predict prices. Everything runs in the terminal. There is no GUI, just a menu you pick options from.',
+  deck: 'For my Data Mining minor project I wanted a question anyone could follow without a finance background: why does one house cost more than another? So I took a real housing dataset, cleaned it, and checked which features line up with price. Then I trained a Linear Regression model to predict prices. Everything runs in the terminal. There is no GUE, just a menu you pick options from.',
   repo: 'https://github.com/Tejveercode/House-Price-Analysis',
   author: { name: 'Tejveer', handle: 'Tejveercode', github: 'https://github.com/Tejveercode' },
   stack: 'Python 3.10+',
@@ -25,7 +25,6 @@ export const toc = [
   { id: 'limits', num: '05', title: 'What it can’t tell you' },
   { id: 'run', num: '06', title: 'Run it yourself' },
   { id: 'summing-up', num: '07', title: 'Summing up' },
-  { id: 'sources', num: '', title: 'Sources' },
 ]
 
 export const sectionIds = toc.map((item) => item.id)
