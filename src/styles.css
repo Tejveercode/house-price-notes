@@ -1147,6 +1147,15 @@ button {
   }
 }
 
+/* The two axis end labels stay fully apart on phones, where the "0" label is
+   hidden and the three-column axis would bunch them together. */
+@media (max-width: 430px) {
+  .chart__axis > div {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 /* The 80/20 figure keeps its counts but becomes two stacked rows, because a
    one-fifth column is barely 70px wide on a phone. */
 @media (max-width: 480px) {
